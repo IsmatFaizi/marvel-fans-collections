@@ -1,42 +1,18 @@
 import * as React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+
+const Header = ({title,tagline, picture,callToAction}) => {
+return (
+  <div>
+  <h1>{title}</h1>
+  <p>{tagline}</p>
+  {callToAction!=null ? <a target="__blank" href={callToAction.link}>{callToAction.linkText}</a>:null}
+  <GatsbyImage
+      image={getImage(picture.localFile)}
+      alt={picture.altText}/>
+  </div>  
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+export default Header;
