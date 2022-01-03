@@ -1,0 +1,89 @@
+.banner{
+    position: relative;
+    text-align: center;
+}
+.bannerImage{
+  width: 100%;
+}
+.textOnImage{
+    display: block;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1vh 2vw;
+    border-radius: 2vw;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+}
+.textOnImage h1{
+   margin: 5px;
+   font-size: 3.5vw;
+   display: inline;
+}
+.textOnImage p{
+    font-size: 2vw;
+    margin: 5px;
+    margin-bottom: 10px;
+}
+.btn1 {
+    text-decoration: none;
+    font-size: 1.8vw;
+    padding: 5px 25px;
+    background: transparent;
+    outline: none !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .btn2 {
+    border: 2px solid rgb(255, 255, 255);
+    z-index: 1;
+    color: white;
+  }
+  
+  .btn2:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    direction: rtl;
+    z-index: -1;
+    background: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+  }
+  
+  .btn2:hover {
+    color: rgb(0, 0, 0);
+  }
+  
+  .btn2:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+  }
+  
+  .btn2:active {
+    top: 2px;
+  }
+
+  @media (min-width: 1400px) {
+    .textOnImage{
+      padding: 20px 30px;
+      border-radius: 15px;
+  }
+    .textOnImage h1{
+      font-size:40px;
+   }
+   .textOnImage p{
+       font-size: 25px;
+   }
+   .btn1 {
+    font-size: 25px;
+  }
+  }

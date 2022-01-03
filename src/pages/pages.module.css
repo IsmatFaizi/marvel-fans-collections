@@ -1,0 +1,228 @@
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-width: 300px;
+    background-color: #202124;
+    color: white;
+  }
+
+  /* general ------------------------------------------------------------------------------------- */
+  .teaserBlock{
+    margin: 10px;
+  }
+  .teaserBlock h2{
+    margin: 0;
+    text-align: center;
+    font-size: 3.5vw;
+  }
+  .teaserBlock .teaserBlockDes{
+    margin: 0;
+    text-align: center;
+    font-size: 2.5vw;
+  }
+  .teasers{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    column-gap: 0.8vw;
+    margin: 0.5vh 0;
+  }
+  
+  /* Home page ----------------------------------------------------------------------------------- */
+  .proContainer{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    background-color: #151515;
+  }
+  .proTextContainer{
+    background-color: #151515;
+    margin: 0 2vw;
+  }
+  .proLogo{
+    width: 13vw;
+  }
+  .proDescription{
+    color: white;
+    font-size: 2vw;
+  }
+  .proImage{
+    -webkit-clip-path: polygon(20vw 0, 0% 100%, 100000vw 100vh);
+    width: 85vw;
+  }
+
+  /* contact page ----------------------------------------------------------------------------------- */
+  .contactContainer{
+    padding: 0 10px;
+  }
+  .contactContainer a{
+    color: white;
+  }
+  .socials {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+  }
+  .instagram,
+  .facebook,
+  .twitter,
+  .youtube{
+    background-size: 30px 30px;
+    height: 30px;
+    width: 30px;
+    margin-left: 1rem;
+    transition: transform 0.3 ease;
+  }
+  .instagram:hover,
+  .facebook:hover,
+  .twitter:hover,
+  .youtube:hover  {
+    transform: scale(1.1);
+  }
+  .instagram{
+    background-image: url("../images/instagram.png");
+  }
+  .facebook{
+    background-image: url("../images/facebook.png");
+  }
+  .twitter{
+    background-image: url("../images/twitter.png");
+  }
+  .youtube{
+    background-image: url("../images/youtube.png");
+  }
+
+  /* Detail page ----------------------------------------------------------------------------------- */
+  .detailContainer{
+    background-color: black;
+    color: white;
+    padding: 0 10px;
+    margin-top: 10px;
+  }
+  .detailPoster{
+    height: 100%;
+    width: auto;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .detailText h1{
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 5.5vw;
+  }
+  .detailText p{
+    margin-top: 0;
+    font-size: 3.5vw;
+  }
+  .subDetail{
+    font-weight: bold;
+    margin-left: 3px;
+  }
+  .cast{
+    font-weight: bold;
+  }
+  .trailer{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+  .detailText .trailer a{
+    font-size: 3.5vw;
+  }
+  .picturesContaier{
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .picturesContaier .pictures{
+    max-width: 1400px;
+    width: 100%;
+    max-height: 600px;
+    height: 100%;
+    margin: auto 0;
+    display: block;
+  }
+  .react-multiple-carousel__arrow{
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .detailContainer{
+      display: flex;
+      flex-direction: row;
+      column-gap: 25px;
+      padding: 0 10px 0 0;
+      margin: 10px auto;
+      max-width: 1400px;
+      border-radius: 15px;
+      align-items: center;
+    }
+    .detailText{
+      width: 70%;
+    }
+    .detailPoster{
+      height: 100%;
+      width: auto;
+      margin: 0;
+      max-width: 35%;
+      border-radius: 15px 0 0 15px;
+    }
+    .detailText h1{
+      font-size: 3.5vw;
+    }
+    .detailText p{
+      font-size: 1.8vw;
+    }
+
+}
+
+@media (min-width: 1000px) {
+    /* general */
+  .teaserBlock h2{
+      font-size: 2.5vw;
+    }
+    .teaserBlock .teaserBlockDes{
+      margin: 0;
+      font-size:1.8vw;
+    }
+    .detailText .trailer a{
+      font-size: 35px;
+    }
+    /* Detail page */
+    .detailText h1{
+      font-size: 35px;
+    }
+    .detailText p{
+      font-size: 20px;
+    }
+}
+
+  @media (min-width: 1400px) {
+    /* general */
+    .teaserBlock h2{
+      margin: 5px 0;
+      font-size: 35px;
+    }
+    .teaserBlock .teaserBlockDes{
+      margin: 0;
+      font-size:25px;
+    }
+    .teasers{
+      column-gap: 10px;
+      margin: 10px 0;
+    }
+    /* Home Page */
+    .proImage{
+      -webkit-clip-path: polygon(300px 0, 0% 100%, 100000vw 100vh);
+      width: 1150px;
+    }
+    .proLogo{
+      width: 220px;
+    }
+    .proDescription{
+      font-size: 20px;
+    }
+  }

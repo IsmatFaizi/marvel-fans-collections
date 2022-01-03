@@ -1,9 +1,9 @@
-import { graphql,Link } from "gatsby"
+import { graphql } from "gatsby"
 import * as React from "react"
 import Layout from "../../components/layout"
-import Header from "../../components/header"
+import Banner from "../../components/banner"
 import Teaser from "../../components/teaser"
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { teasers} from '../pages.module.css'
 
 
 const MarvelMovies = ({
@@ -13,14 +13,16 @@ const MarvelMovies = ({
     }}) =>{
     return (
         <Layout>
-          <Header title={headerMarvelMovies.title} 
+          {/* banner */}
+          <Banner title={headerMarvelMovies.title} 
           tagline={headerMarvelMovies.tagline} 
           picture={headerMarvelMovies.pricture}/>
-           {moviesPage.map((item)=>{
+           {/* al movies */}
+           <div className={teasers}>{moviesPage.map((item)=>{
             const movie = item.node.marvelMoviesFields;
                return <Teaser key={item.node.id} slug={`/marvel-movies/${item.node.slug}`}
                poster={movie.poster} title={movie.title}/>
-           })}
+           })}</div>
         </Layout>
     )
 }

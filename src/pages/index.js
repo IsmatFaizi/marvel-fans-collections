@@ -4,41 +4,56 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Teaser from "../components/teaser"
-import Header from "../components/header"
+import Banner from "../components/banner"
+import {
+   proContainer,
+   proTextContainer,
+   proImage,
+   proDescription,
+   proLogo,
+   teaserBlock,
+   teaserBlockDes,
+   teasers
+} from './pages.module.css'
+import { btn1, btn2,} from '../components/banner.module.css'
 
 const IndexPage = ({data: {wpPage: {homePageFields:home}}}) => {
   return(
       <Layout>
-        {/* header */}
-        <Header title={home.headerHome.title} tagline={home.headerHome.tagline}
+        {/* banner */}
+        <Banner title={home.headerHome.title} tagline={home.headerHome.tagline}
         callToAction={home.callToAction} picture={home.headerHome.picture}/>
-        {/* Promotion */}
-        <div>
-          <p>{home.promotion.description}</p>
-          <a target="__blank" href={home.promotion.callToAction.link}>{home.promotion.callToAction.linkText}</a>
-          <GatsbyImage
-                  image={getImage(home.promotion.logo.localFile)}
-                  alt={home.promotion.logo.altText}/>
-          <GatsbyImage
-                  image={getImage(home.promotion.promotionPicture.localFile)}
-                  alt={home.promotion.promotionPicture.altText}/>
-        </div>
         {/* marvel movies */}
-        <div>
+        <div className={teaserBlock}>
           <h2>{home.bestMarvelMovies.title}</h2>
-          <p>{home.bestMarvelMovies.description}</p>
-          <div>{home.bestMarvelMovies.marvelMovies.map(movie =>{
+          <p className={teaserBlockDes}>{home.bestMarvelMovies.description}</p>
+          <div className={teasers}>{home.bestMarvelMovies.marvelMovies.map(movie =>{
            return <Teaser key={movie.id} slug={`marvel-movies/${movie.slug}`} 
             poster={movie.marvelMoviesFields.poster} title={movie.marvelMoviesFields.title}/>
           })}
           </div>
         </div>
+         {/* Promotion */}
+         <div className={proContainer}>
+          <div className={proTextContainer}>
+          <GatsbyImage
+                  className={proLogo}
+                  image={getImage(home.promotion.logo.localFile)}
+                  alt={home.promotion.logo.altText}/>
+          <p className={proDescription}>{home.promotion.description}</p>
+          <a target="__blank" href={home.promotion.callToAction.link} className={`${btn1} ${btn2}`}>{home.promotion.callToAction.linkText}</a>
+          </div>
+          <GatsbyImage
+                  className={proImage}
+                  image={getImage(home.promotion.promotionPicture.localFile)}
+                  alt={home.promotion.promotionPicture.altText}/>
+        </div>
         {/* marvel tv shows */}
-        <div>
+        <div className={teaserBlock}v>
           <h2>{home.bestMarvelTvShows.title}</h2>
-          <p>{home.bestMarvelTvShows.description}</p>
-          <div>{home.bestMarvelTvShows.marvelTvShows.map(tvShow =>{
-           return <Teaser key={tvShow.id} slug={`marvel-tv-show/${tvShow.slug}`} 
+          <p className={teaserBlockDes}>{home.bestMarvelTvShows.description}</p>
+          <div className={teasers}>{home.bestMarvelTvShows.marvelTvShows.map(tvShow =>{
+           return <Teaser key={tvShow.id} slug={`marvel-tv-shows/${tvShow.slug}`} 
             poster={tvShow.marvelTvShowsFields.poster} title={tvShow.marvelTvShowsFields.title}/>
           })}
           </div>
@@ -80,7 +95,7 @@ query {
                 altText
                 localFile {
                   childImageSharp {
-                    gatsbyImageData(placeholder: BLURRED, transformOptions: {grayscale: true})
+                    gatsbyImageData(placeholder: BLURRED)
                   }
                 }
               }
@@ -102,7 +117,7 @@ query {
                 slug
                 localFile {
                   childImageSharp {
-                    gatsbyImageData(placeholder: BLURRED, transformOptions: {grayscale: true})
+                    gatsbyImageData(placeholder: BLURRED)
                   }
                 }
               }
