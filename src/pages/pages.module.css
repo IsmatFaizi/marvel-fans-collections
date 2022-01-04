@@ -1,4 +1,4 @@
-body {
+  body {
     margin: 0;
     font-family: Helvetica, sans-serif;
     background-color: #f4f4f4;
@@ -51,7 +51,7 @@ body {
     font-size: 2vw;
   }
   .proImage{
-    -webkit-clip-path: polygon(20vw 0, 0% 100%, 100000vw 100vh);
+    clip-path: polygon(20vw 0, 0% 100%, 100000vw 100vh);
     width: 85vw;
   }
 
@@ -216,7 +216,7 @@ body {
     }
     /* Home Page */
     .proImage{
-      -webkit-clip-path: polygon(300px 0, 0% 100%, 100000vw 100vh);
+      clip-path: polygon(300px 0, 0% 100%, 100000vw 100vh);
       width: 1150px;
     }
     .proLogo{
