@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Header from './header'
 import Footer from './footer'
 
-
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -15,14 +14,16 @@ const Layout = ({ children }) => {
     }
   `)
   return (
+  <>
     <div>
       <title>{data.site.siteMetadata.title}</title>
       <Header />
       <main>
         {children}
       </main>
-      <Footer />
     </div>
+    <Footer />
+  </>
   )
 }
 

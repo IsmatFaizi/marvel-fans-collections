@@ -9,6 +9,9 @@
     color: white;
   }
 
+  main{
+    min-height: calc(100vh - 90px);
+  }
   /* general ------------------------------------------------------------------------------------- */
   .teaserBlock{
     margin: 10px;
