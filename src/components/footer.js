@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <footer className={footer}>
         <a href="/" className={logo}>{data.site.siteMetadata.title}</a>
-        <p>&copy;{new Date().getFullYear()} {data.site.siteMetadata.title}</p>
+        <p>&copy;{new Date().getFullYear()} {data.site.siteMetadata.title} | Made by Ismat Faizi</p>
     </footer>
   )
 }

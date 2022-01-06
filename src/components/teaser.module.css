@@ -16,6 +16,8 @@
     border-radius: 1.5vw;
     box-shadow: rgba(0, 0, 0, 0.9) 0px 8px 24px;
     margin-bottom: 1vh;
+    transition: all 0.5s ease;
+    top: 0;
 } 
 .teaserTitle{
     width: 100%;
@@ -23,6 +25,7 @@
     text-align: center;
     margin:auto;
     font-size: 2.5vw;
+    transition: all 0.5s ease;
 }
 .teaserContainer:hover .teaserTitle {
     color: red;
